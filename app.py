@@ -3,10 +3,22 @@ from selenium.common.exceptions import NoSuchElementException
 import time
 import pandas as pd
 
+# This tool will require to first create a list of all the MATCH_IDs the user wants to get the data from.
+
+# Insert the date of the events you will be scraping.
 DATE_NAME = 'INSERT_DATE_HERE'
+
+# Insert the MATCH_ID of the first match of the list.
 lst_first = ['INSERT_FIRST_MATCH_ID_HERE']
+
+# Insert the rest of the MATCH_IDs here.
 lst_rest = ['INSERT_REST_MATCH_ID_HERE']
 
+# # Replace this path with the path you want the .csv with data to be saved into.
+# data_csv_path = '/Users/YOUR_USER/YOUR_FOLDER/'
+
+# Loop through the lst_first list (this will only contain one match).
+# Then replace "lst_first" with "lst_rest" to loop though the rest of the matches.
 for match in lst_first:
     browser = webdriver.Chrome()
     browser.get(f'https://www.flashscore.co.uk/match/{match}/#/match-summary')
